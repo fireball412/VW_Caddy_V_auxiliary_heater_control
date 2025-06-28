@@ -3,12 +3,13 @@
 #include <ESP32Servo.h> // Use ESP32Servo instead of Servo
 
 #define ONE_WIRE_BUS 4 // DS18B20 data pin
-const float TEMP_THRESHOLD_LOW_C = 18.0;
+const float TEMP_THRESHOLD_LOW_C = 15.0;
 const float TEMP_THRESHOLD_HIGH_C = 35.0;
 const float TEMP_NOTVALID_C = 200.0;
 
 
 // Servo configuration
+// determine values with firmware "servo_set"
 #define SERVO_PIN 5 // GPIO for servo
 const int servo_on = 125;
 const int servo_neutral  = 90;
@@ -34,7 +35,7 @@ void moveServoPulse() {
 void setup() {
   Serial.begin(115200); 
   sensors.begin();
-  Serial.println("DS18B20 Temperature Sensor Example");
+  Serial.println("DS18B20 Temperature Sensor Readings");
 
   myServo.attach(SERVO_PIN, 500, 2400); // Attach with pulse width range!
   myServo.write(servo_neutral);
@@ -48,7 +49,7 @@ void loop() {
 
   if (tempC == DEVICE_DISCONNECTED_C) {
     Serial.println("Error: Could not read temperature data");
-    rgbLedWrite(RGB_BUILTIN, RGB_BRIGHTNESS, RGB_BRIGHTNESS, 0);  // yelloe
+    rgbLedWrite(RGB_BUILTIN, RGB_BRIGHTNESS, RGB_BRIGHTNESS, 0);  // yellow
   } else {
     Serial.print("Temperature: ");
     Serial.print(tempC);
