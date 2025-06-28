@@ -1,3 +1,5 @@
+English
+
 Background: This project is about the automation of the auxiliary heater of a Volkswagen Caddy V (2024) for the purpose of sleeping in the car. 
 
 Issue: The car only allows programming of one heating  activation during night which may yield too low temperatures.
@@ -12,7 +14,8 @@ The main code measures the temperature and compares with TEMP_THRESHOLD_LOW_C. I
 
 The LED of the development board indicates the status. Blue/red means temperature is below/above TEMP_THRESHOLD_LOW_C. Yellow means that the temperature measurements results an error
 
-Deutsch (via ChatGPT):
+Deutsch
+
 Hintergrund: Dieses Projekt befasst sich mit der Automatisierung der Zusatzheizung eines Volkswagen Caddy V (2024) mit dem Ziel, im Auto übernachten zu können.
 
 Problemstellung: Das Fahrzeug erlaubt nur eine Heizungsaktivierung während der Nacht, was zu zu niedrigen Temperaturen führen kann.
